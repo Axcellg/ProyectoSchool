@@ -1,0 +1,45 @@
+﻿@model List<Person>
+
+@{
+    ViewData["Title"] = "Person Page";
+}
+
+<h1> Persona </h1>
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Personas</h1>
+</div>
+
+<p>
+    <a asp-action="Create">Agregar Nuevo</a>
+</p>
+
+<div class="text-Left">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Discriminator</th>
+                <th scope="col">Fecha de inscripción</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.PersonId</th>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Discriminator</td>
+                    <td>@item.EnrollmentDate</td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

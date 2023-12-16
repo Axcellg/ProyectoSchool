@@ -1,0 +1,43 @@
+﻿@model List<OnsiteCourse>
+
+@{
+    ViewData["Title"] = "OnsiteCourse Page";
+}
+
+<h1> Onsite Course </h1>
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Onsite Course</h1>
+</div>
+
+<p>
+    <a asp-action="Create">Agregar Nuevo</a>
+</p>
+
+<div class="text-Left">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Dias</th>
+                <th scope="col">Ubicacion</th>
+                <th scope="col">Tiempo</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.CourseId</th>
+                    <td>@item.Days</td>
+                    <td>@item.Location</td>
+                    <td>@item.Time</td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

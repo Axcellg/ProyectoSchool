@@ -1,0 +1,48 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "Student";
+}
+
+<h1>Studiantes</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Estudiantes</h1>
+</div>
+
+    <p>
+        <a asp-action="Create">Agregar Nuevo</a>
+    </p>
+
+<div class="text-Left">
+<table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope ="col">Codigo</th>
+            <th scope ="col">Nombre</th>
+            <th scope ="col">Apellido</th>
+            <th scope ="col">Fecha Creación</th>
+            <th scope ="col">Fecha Inscripción</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.CreationDate</td>
+                    <td>@item.EnrollmentDate</td>
+                </tr>
+            }
+        </tbody>
+    
+    </table>
+    </div>
+
+
+
+
+

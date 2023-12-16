@@ -1,0 +1,42 @@
+﻿@model List<OfficeAssignment>
+
+@{
+    ViewData["Title"] = "OfficeAssignment Page";
+}
+
+<h1>OfficeAssignment</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Lista de OfficeAssignment</h1>
+</div>
+
+<p>
+    <a asp-action="Create">Agregar Nuevo</a>
+</p>
+
+<div class="text-Left">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Direccion</th>
+               
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.InstructorId</th>
+                    <td>@item.Location</td>
+                    
+                   
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

@@ -1,0 +1,42 @@
+﻿@model List<OnlineCourse>
+
+
+@{
+    ViewData["Title"] = "OnlineCourse Page";
+}
+
+<h1> Curso Online </h1>
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Cursos Online</h1>
+</div>
+
+<p>
+    <a asp-action="Create">Agregar Nuevo</a>
+</p>
+
+<div class="text-Left">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">URL</th>
+
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.CourseId</th>
+                    <td>@item.Url</td>
+
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
